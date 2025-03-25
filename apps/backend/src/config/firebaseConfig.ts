@@ -3,9 +3,9 @@ import { getFirestore } from "firebase-admin/firestore";
 import { getAuth } from "firebase-admin/auth";
 import dotenv from "dotenv";
 import {
-	FIRESTORE_EMULATOR_HOST,
 	FIREBASE_AUTH_EMULATOR_HOST,
-} from "@repo/shared/constants/firebase";
+	FIRESTORE_EMULATOR_HOST,
+} from "@repo/shared/src/constants/firebase";
 
 dotenv.config();
 
