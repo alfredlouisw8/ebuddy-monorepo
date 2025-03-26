@@ -11,7 +11,7 @@ import {
 	Button,
 } from "@mui/material";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import "../firebase/config"; // Import to initialize Firebase
+import "../firebase/config";
 import UserList from "../components/organisms/UserList";
 
 export default function DashboardPage() {

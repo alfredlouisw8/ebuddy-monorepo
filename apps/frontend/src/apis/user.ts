@@ -1,1 +1,1 @@
-export * from "@repo/shared/models/user";
+export * from "@repo/shared/src/models/user";

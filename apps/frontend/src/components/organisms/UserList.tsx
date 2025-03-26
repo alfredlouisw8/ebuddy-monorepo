@@ -26,7 +26,7 @@ const UserList: React.FC = () => {
 	const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
 	const [userToDelete, setUserToDelete] = useState<string | null>(null);
 	const [page, setPage] = useState(0);
-	const limit = 6; // users per page
+	const limit = 6;
 
 	const dispatch = useDispatch<AppDispatch>();
 	const { users, loading, error, selectedUser } = useSelector(
@@ -34,7 +34,6 @@ const UserList: React.FC = () => {
 	);
 	const auth = getAuth();
 
-	// Fetch users on component mount
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -143,7 +142,6 @@ const UserList: React.FC = () => {
 				disableNext={users.length < limit}
 			/>
 
-			{/* Dialogs */}
 			<CreateUserDialog
 				open={createDialogOpen}
 				onClose={() => setCreateDialogOpen(false)}

@@ -1,6 +1,8 @@
 import { User } from "./user";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001/api";
+const API_BASE =
+	process.env.NEXT_PUBLIC_API_URL ||
+	"http://127.0.0.1:5001/ebuddy-adb79/us-central1/api";
 
 export const fetchUserData = async (
 	token: string,

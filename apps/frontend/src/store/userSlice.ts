@@ -23,7 +23,7 @@ const initialState: UserState = {
 	error: null,
 	success: null,
 };
-// Fetch all users
+
 export const fetchUsers = createAsyncThunk(
 	"user/fetchUsers",
 	async ({
@@ -39,7 +39,6 @@ export const fetchUsers = createAsyncThunk(
 	}
 );
 
-// Create a new user
 export const createNewUser = createAsyncThunk(
 	"user/createUser",
 	async ({
@@ -53,7 +52,6 @@ export const createNewUser = createAsyncThunk(
 	}
 );
 
-// Update an existing user
 export const updateUser = createAsyncThunk(
 	"user/updateUser",
 	async ({ token, userData }: { token: string; userData: Partial<User> }) => {
@@ -61,7 +59,6 @@ export const updateUser = createAsyncThunk(
 	}
 );
 
-// Delete a user
 export const removeUser = createAsyncThunk(
 	"user/deleteUser",
 	async ({ token, userId }: { token: string; userId: string }) => {

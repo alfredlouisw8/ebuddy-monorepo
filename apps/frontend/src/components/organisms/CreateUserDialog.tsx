@@ -26,7 +26,6 @@ const CreateUserDialog: React.FC<CreateUserDialogProps> = ({
 		try {
 			const token = await auth.currentUser?.getIdToken();
 			if (token) {
-				// Remove the id for creation since backend will generate it
 				const { id, ...userData } = data;
 				await dispatch(
 					createNewUser({ token, userData: userData as Omit<User, "id"> })

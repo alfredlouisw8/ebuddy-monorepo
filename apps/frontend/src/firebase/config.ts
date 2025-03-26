@@ -1,15 +1,15 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, connectAuthEmulator } from "firebase/auth";
-import { FIREBASE_AUTH_EMULATOR_HOST } from "@repo/shared/src/constants/firebase";
+import {
+	FIREBASE_AUTH_EMULATOR_HOST,
+	DEV_FIREBASE_CONFIG,
+} from "@repo/shared/src/constants/firebase";
 
-// Initialize Firebase
-const app = initializeApp();
+const app = initializeApp(DEV_FIREBASE_CONFIG);
 const auth = getAuth(app);
 
-// Connect to emulator in development
 if (process.env.NODE_ENV === "development") {
-	// Must be called AFTER getAuth() but BEFORE any operations
-	connectAuthEmulator(auth, FIREBASE_AUTH_EMULATOR_HOST, {
+	connectAuthEmulator(auth, `http://${FIREBASE_AUTH_EMULATOR_HOST}`, {
 		disableWarnings: true,
 	});
 }

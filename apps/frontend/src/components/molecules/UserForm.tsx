@@ -8,9 +8,8 @@ import { z } from "zod";
 import FormField from "../atoms/FormField";
 import { UserSchema } from "../../apis/user";
 
-// Create mode schema (no id)
 const CreateUserSchema = UserSchema.omit({ id: true });
-// Types
+
 type CreateUserInput = z.infer<typeof CreateUserSchema>;
 type UpdateUserInput = z.infer<typeof UserSchema>;
 
@@ -29,7 +28,6 @@ const UserForm: React.FC<UserFormProps> = ({
 	isLoading = false,
 	mode,
 }) => {
-	// Pick schema and type based on mode
 	const schema = mode === "create" ? CreateUserSchema : UserSchema;
 	const formType = mode === "create" ? CreateUserSchema : UserSchema;
 
@@ -43,7 +41,7 @@ const UserForm: React.FC<UserFormProps> = ({
 			name: user?.name || "",
 			email: user?.email || "",
 			...(mode === "update" && user?.id ? { id: user.id } : {}),
-		} as any, // casting since defaultValues structure depends on mode
+		} as any,
 	});
 
 	return (

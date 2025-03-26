@@ -1,40 +1,37 @@
-# Turborepo kitchen sink starter
+# EBUDDY monorepo
 
-This Turborepo starter is maintained by the Turborepo core team.
+## Installation
 
-This example also shows how to use [Workspace Configurations](https://turbo.build/repo/docs/core-concepts/monorepos/configuring-workspaces).
+### 1. **Clone the repo**
 
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest -e kitchen-sink
+```bash
+git clone https://github.com/alfredlouisw8/ebuddy-monorepo.git
+cd ebuddy-monorepo
+yarn install
 ```
 
-## What's inside?
+### 2. **Setup Firebase**
 
-This Turborepo includes the following packages and apps:
+Create `.firebaserc` inside `apps/backend`
 
-### Apps and Packages
+```bash
+{
+  "projects": {
+    "default": "YOUR_PROJECT_ID"
+  }
+}
+```
 
-- `api`: an [Express](https://expressjs.com/) server
-- `storefront`: a [Next.js](https://nextjs.org/) app
-- `admin`: a [Vite](https://vitejs.dev/) single page app
-- `blog`: a [Remix](https://remix.run/) blog
-- `@repo/eslint-config`: ESLint configurations used throughout the monorepo
-- `@repo/jest-presets`: Jest configurations
-- `@repo/logger`: isomorphic logger (a small wrapper around console.log)
-- `@repo/ui`: a dummy React UI library (which contains `<CounterButton>` and `<Link>` components)
-- `@repo/typescript-config`: tsconfig.json's used throughout the monorepo
+### 3. **Run the project**
 
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
+```bash
+yarn dev
+```
 
-### Utilities
+### 4. **Put the Firebase Function URL inside .env in `apps/frontend`**
 
-This Turborepo has some additional tools already setup for you:
+```bash
+NEXT_PUBLIC_API_URL=YOUR_FUNCTION_URL
+```
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Jest](https://jestjs.io) test runner for all things JavaScript
-- [Prettier](https://prettier.io) for code formatting
+### 5. **It should be working correctly**

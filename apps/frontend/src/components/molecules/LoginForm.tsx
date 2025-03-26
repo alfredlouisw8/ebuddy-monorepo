@@ -53,7 +53,7 @@ const LoginForm: React.FC = () => {
 				data.email,
 				data.password
 			);
-			// Get the token and store it
+
 			const token = await userCredential.user.getIdToken();
 			router.push("/");
 		} catch (err: any) {
