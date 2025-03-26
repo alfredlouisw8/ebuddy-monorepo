@@ -12,6 +12,7 @@ yarn install
 
 ### 2. **Setup Firebase**
 
+Login using `firebase login` if not already logged in.
 Create `.firebaserc` inside `apps/backend`
 
 ```bash
@@ -34,4 +35,6 @@ yarn dev
 NEXT_PUBLIC_API_URL=YOUR_FUNCTION_URL
 ```
 
-### 5. **It should be working correctly**
+### 5. **Open localhost:3002**
+
+Create new user inside Firebase Auth Emulator, fill Email and password, and Login
